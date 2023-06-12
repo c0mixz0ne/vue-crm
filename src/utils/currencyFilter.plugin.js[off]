@@ -1,0 +1,10 @@
+export default {
+    install(app, options) {
+        app.config.globalProperties.$currencyFilter = function(val, curr = 'RUB'){
+            return new Intl.NumberFormat('ru-RU', {
+                style: 'currency',
+                currency: curr
+            }).format(val)
+        }
+    }
+}
